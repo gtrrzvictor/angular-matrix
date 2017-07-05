@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angular Matrix Sample">
+    <title>Angular Matrix Sample</title>
+    <style type="text/css">
+    /*basic reset*/
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /*adding a black bg to the body to make things clearer*/
+
+    body {
+        background: black;
+    }
+
+    canvas {
+        display: block;
+    }
+    </style>
+</head>
+
+<body ng-app="angularMatrixApp">
+    <div ng-controller="SampleController">
+        <ng-matrix config="config"></ng-matrix>
+    </div>
+    <script src="../node_modules/angular/angular.js?ver=1.6.5" type="text/javascript"></script>
+    <script src="../angular-matrix.js?ver=0.1.0" type="text/javascript"></script>
+    <script type="text/javascript">
+    angular
+        .module('angularMatrixApp', ['angular-matrix'])
+        .controller('SampleController', ['$scope', '$timeout', function($scope, $timeout) {
+            $scope.config = {
+                id: 'canvasId',
+                text: "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑",
+                fontSize: 10,
+                speed: 100
+            };
+            $timeout(function() {
+                $scope.config.text = '123456789 ';
+            }, 5000);
+        }]);
+    </script>
+</body>
+
+</html>
