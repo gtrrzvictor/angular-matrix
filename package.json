@@ -2,7 +2,7 @@
     "name": "angular-matrix",
     "version": "1.0.0",
     "description": "Angular JS directives to draw text as matrix effect",
-    "main": "index.js",
+    "main": "angular-matrix.js",
     "repository": "https://github.com/gtrrzvictor/angular-matrix.git",
     "author": "Victor Gutierrez <victor.gutierrez@amplia.es>",
     "license": "MIT",
