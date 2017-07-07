@@ -11,8 +11,8 @@ angular.module('angular-matrix', [])
                 var ctx = c.getContext("2d");
 
                 //making the canvas full screen
-                c.height = window.innerHeight;
-                c.width = window.innerWidth;
+                c.height = jQuery(element).parents('.panel-body')[0].offsetWidth * 9 / 16;
+                c.width = jQuery(element).parents('.panel-body')[0].offsetWidth;
 
                 //chinese characters - taken from the unicode charset
 
