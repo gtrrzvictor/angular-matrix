@@ -28,8 +28,11 @@
 
 <body ng-app="angularMatrixApp">
     <div ng-controller="SampleController">
-        <ng-matrix config="config"></ng-matrix>
+        <div class="panel-body">
+            <ng-matrix config="config"></ng-matrix>
+        </div>
     </div>
+    <script src="../node_modules/jquery/dist/jquery.js?ver=3.2.1" type="text/javascript"></script>
     <script src="../node_modules/angular/angular.js?ver=1.6.5" type="text/javascript"></script>
     <script src="../angular-matrix.js?ver=0.1.0" type="text/javascript"></script>
     <script type="text/javascript">
@@ -38,12 +41,13 @@
         .controller('SampleController', ['$scope', '$timeout', function($scope, $timeout) {
             $scope.config = {
                 id: 'canvasId',
-                text: "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑",
+                texts: ["1.3325", "3.3325", "2.3325"],
                 fontSize: 10,
                 speed: 100
             };
             $timeout(function() {
-                $scope.config.text = '123456789 ';
+                $scope.config.texts = ['123456789'];
+                console.log($scope.config.columns);
             }, 5000);
         }]);
     </script>

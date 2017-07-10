@@ -25,20 +25,22 @@ angular.module('angular-matrix', [])
                 //1 = y co-ordinate of the drop(same for every drop initially)
                 for (var x = 0; x < columns; x++)
                     drops[x] = 1;
-
+                scope.config.columns = drops.length;
                 //drawing the characters
                 function draw() {
                     //Black BG for the canvas
                     //translucent BG to show trail
-                    var arrayText = config.text.split("");
                     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
                     ctx.fillRect(0, 0, c.width, c.height);
                     ctx.fillStyle = "#0F0"; //green text
                     ctx.font = font_size + "px arial";
                     //looping over drops
+                    var arrayText;
                     for (var i = 0; i < drops.length; i++) {
+                        arrayText = config.texts[i % config.texts.length].split("");
+                        arrayText.push(" ");
                         //a random text character to print
-                        var text = arrayText[Math.floor(Math.random() * arrayText.length)];
+                        var text = arrayText[drops[i] % arrayText.length];
                         //x = i*font_size, y = value of drops[i]*font_size
                         ctx.fillText(text, i * font_size, drops[i] * font_size);
 
